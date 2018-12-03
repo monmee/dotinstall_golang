@@ -3,15 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	// const name = "monmee"
-	// name = "tanaka"
-	// fmt.Printf(name)
+	// var x int
+	// x = 10 % 3
+	// x += 3
+	// x++
+	// fmt.Println(x)
 
-	const (
-		sun = iota // 0
-		mon // 1
-		tue //2
-	)
-	fmt.Println(sun, mon, tue)
+	// var s string
+	// s = "hello " + "world"
+	// fmt.Println(s)
 
+	a := true
+	b := true
+	fmt.Println(a && b)
+	fmt.Println(a || b)
+	fmt.Println(!a)
 }
