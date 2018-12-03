@@ -2,11 +2,18 @@ package main
 
 import "fmt"
 
-func main() {
-	a := 5
-	var pa *int 			// int型を格納する領域のアドレスを格納する準備
-	pa = &a 					// &a: aのアドレス
-	fmt.Println(pa)
+// func hi(name string) string {
+// 	// fmt.Println("hi " + name)
+// 	msg := "hi " + name
+// 	return msg
+// }
 
-	fmt.Println(*pa) 	// *pa: paの領域にあるデータの値 
+func hi(name string) (msg string) {
+	// fmt.Println("hi " + name)
+	msg = "hi " + name
+	return
+}
+
+func main() {
+	fmt.Println(hi("monmee"))
 }
