@@ -3,19 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	// var x int
-	// x = 10 % 3
-	// x += 3
-	// x++
-	// fmt.Println(x)
+	a := 5
+	var pa *int 			// int型を格納する領域のアドレスを格納する準備
+	pa = &a 					// &a: aのアドレス
+	fmt.Println(pa)
 
-	// var s string
-	// s = "hello " + "world"
-	// fmt.Println(s)
-
-	a := true
-	b := true
-	fmt.Println(a && b)
-	fmt.Println(a || b)
-	fmt.Println(!a)
+	fmt.Println(*pa) 	// *pa: paの領域にあるデータの値 
 }
