@@ -3,11 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	a := [5]int{1, 3, 5, 7, 9}
-	s := a[2:4]
-	fmt.Println(a)
+	// s := make([]int, 3) 	// [0 0 0]
+	s := []int{1, 3, 5} 		// []に値を入れないとスライスになる
+	s = append(s, 7, 9, 11)
+	t := make([]int, len(s))
+	n := copy(t, s)
 	fmt.Println(s)
-	fmt.Println(len(s))
-	fmt.Println(cap(s))
+	fmt.Println(t)
+	fmt.Println(n)
 
 }
