@@ -3,9 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	a := 10
-	b := 23.3
-	c := "hoge"
-	var d bool
-	fmt.Printf("a: %d, b: %f, c: %s, d: %t\n", a, b, c, d)
+	// const name = "monmee"
+	// name = "tanaka"
+	// fmt.Printf(name)
+
+	const (
+		sun = iota // 0
+		mon // 1
+		tue //2
+	)
+	fmt.Println(sun, mon, tue)
+
 }
