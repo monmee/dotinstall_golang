@@ -3,23 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	// for i := 0; i < 10; i++ {
-	// 	if i == 3 { break } 
-	// 	if i == 3 { continue } 
-	// 	fmt.Println(i)
+	s := []int{2, 4, 6}
+	// for idx, val := range s {
+	// 	fmt.Println(idx, val)
 	// }
 
-	//// Whileチックな例
-	// i := 0
-	// for i < 10 {
-	// 	fmt.Println(i)
-	// 	i++
+	//// _: blank修飾子
+	// for _, val := range s {
+	// 	fmt.Println(val)
 	// }
 
-	i := 0
-	for {
-		fmt.Println(i)
-		i++
-		if i == 3 { break }
+	m := map[string]int{"monmee": 100, "yuto": 200}
+	for k, v := range m {
+		fmt.Println(k, v)
 	}
 }
