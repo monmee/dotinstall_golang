@@ -2,19 +2,19 @@ package main
 
 import "fmt"
 
+type user struct {
+	name string
+	score int
+}
 func main() {
-	s := []int{2, 4, 6}
-	// for idx, val := range s {
-	// 	fmt.Println(idx, val)
-	// }
+	//// ポインタが返る
+	// u := new(user)
+	// (*u).name = "monmee"
+	// u.name = "monmee"
+	// u.score = 39
 
-	//// _: blank修飾子
-	// for _, val := range s {
-	// 	fmt.Println(val)
-	// }
-
-	m := map[string]int{"monmee": 100, "yuto": 200}
-	for k, v := range m {
-		fmt.Println(k, v)
-	}
+	//// ポインタは返らない
+	// u := user{"monmee", 100}
+	u := user{name: "monmee", score: 100}
+	fmt.Println(u)
 }
