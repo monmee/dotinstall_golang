@@ -3,14 +3,25 @@ package main
 import "fmt"
 
 func main() {
+	// signal := "red"
+	// switch signal {
+	// case "red":
+	// 	fmt.Println("Stop")
+	// case "yellow":
+	// 	fmt.Println("Caution")
+	// case "blue":
+	// 	fmt.Println("Go")
+	// default:
+	// 	fmt.Println("Wrong signal")
+	// }
 
-	// score := 43
-
-	if score := 63; score > 80 {
+	score := 82
+	switch {
+	case score > 80:
 		fmt.Println("Great!")
-	} else if score > 60 {
+	case score > 60:
 		fmt.Println("Good.")
-	} else {
+	default:
 		fmt.Println("So so.")
 	}
 }
