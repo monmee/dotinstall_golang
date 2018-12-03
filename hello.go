@@ -2,19 +2,13 @@ package main
 
 import "fmt"
 
-// func swap(a, b int) (int, int) {
-// 	return b, a
-// }
-
 func main() {
-	// fmt.Println(swap(2, 5))
-
-	// f := func(a, b int) (int, int) {
-	// 	return b, a
-	// }
-	// fmt.Println(f(2, 3))
-
-	func(msg string) {
-		fmt.Println(msg)
-	}("monmee")
+	// var a [5]int //a[0]-a[4]
+	// a[2] = 1
+	// a[3] = 2
+	// fmt.Println(a)
+	// b := [3]int{1, 3, 5}
+	b := [...]int{1, 3, 5}
+	fmt.Println(b)
+	fmt.Println(len(b))
 }
