@@ -3,13 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	// s := make([]int, 3) 	// [0 0 0]
-	s := []int{1, 3, 5} 		// []に値を入れないとスライスになる
-	s = append(s, 7, 9, 11)
-	t := make([]int, len(s))
-	n := copy(t, s)
-	fmt.Println(s)
-	fmt.Println(t)
-	fmt.Println(n)
-
+	// m := make(map[string]int)
+	// m["monmee"] = 200
+	// m["yuto"] = 100
+	m := map[string]int{"monmee": 200, "yuto": 100}
+	fmt.Println(m)
+	fmt.Println(len(m))
+	delete(m, "monmee")
+	fmt.Println(m)
+	val, isOk := m["yuto"]
+	fmt.Println(val)
+	fmt.Println(isOk)
 }
