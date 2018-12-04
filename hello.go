@@ -3,18 +3,26 @@ package main
 import "fmt"
 
 type user struct {
-	name string
+	name  string
 	score int
 }
-func main() {
-	//// ポインタが返る
-	// u := new(user)
-	// (*u).name = "monmee"
-	// u.name = "monmee"
-	// u.score = 39
 
-	//// ポインタは返らない
-	// u := user{"monmee", 100}
+func (u user) show() {
+	fmt.Printf("name:%s, score:%d\n", u.name, u.score)
+}
+
+func (u user) hit() {
+	u.score++
+}
+
+func (u *user) hitRef() {
+	u.score++
+}
+
+func main() {
 	u := user{name: "monmee", score: 100}
-	fmt.Println(u)
+	u.hit()
+	u.show()
+	u.hitRef()
+	u.show()
 }
