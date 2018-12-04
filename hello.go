@@ -1,28 +1,28 @@
+// インターフェース
+// メソッド一覧を定義したデータ型
+
 package main
 
 import "fmt"
 
-type user struct {
-	name  string
-	score int
+type greeter interface {
+	greet()
 }
 
-func (u user) show() {
-	fmt.Printf("name:%s, score:%d\n", u.name, u.score)
+type japanese struct{}
+type american struct{}
+
+func (j japanese) greet() {
+	fmt.Println("こんにちは")
 }
 
-func (u user) hit() {
-	u.score++
-}
-
-func (u *user) hitRef() {
-	u.score++
+func (a american) greet() {
+	fmt.Println("Hello")
 }
 
 func main() {
-	u := user{name: "monmee", score: 100}
-	u.hit()
-	u.show()
-	u.hitRef()
-	u.show()
+	greeters := []greeter{japanese{}, american{}}
+	for _, greeter := range greeters {
+		greeter.greet()
+	}
 }
