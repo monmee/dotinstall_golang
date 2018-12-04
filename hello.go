@@ -1,48 +1,25 @@
-// インターフェース
-// メソッド一覧を定義したデータ型
+// goroutine: 並行処理
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
-type greeter interface {
-	greet()
+func task1() {
+	time.Sleep(time.Second * 2)
+	fmt.Println("task1 finished...!")
 }
 
-type japanese struct{}
-type american struct{}
+func task2() {
+	fmt.Println("task2 finishied!")
 
-func show(t interface{}) {
-	//// 型アサーション
-	// _, ok := t.(japanese)
-	// if ok {
-	// 	fmt.Println("I am Japanese")
-	// } else {
-	// 	fmt.Println("I am not Japanese")
-	// }
-
-	//// 型Switch
-	switch t.(type) {
-	case japanese:
-		fmt.Println("I am Japanese")
-	default:
-		fmt.Println("I am not Japanese")
-	}
-}
-
-func (j japanese) greet() {
-	fmt.Println("こんにちは")
-}
-
-func (a american) greet() {
-	fmt.Println("Hello")
 }
 
 func main() {
-	greeters := []greeter{japanese{}, american{}}
-	show(japanese{})
-	for _, greeter := range greeters {
-		greeter.greet()
-		show(greeter)
-	}
+	go task1()
+	go task2()
+
+	time.Sleep(time.Second * 3)
 }
