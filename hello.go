@@ -1,4 +1,5 @@
 // goroutine: 並行処理
+// channel: データの受け渡しパイプ
 
 package main
 
@@ -7,9 +8,9 @@ import (
 	"time"
 )
 
-func task1() {
+func task1(result chan string) {
 	time.Sleep(time.Second * 2)
-	fmt.Println("task1 finished...!")
+	result <- "task1 result"
 }
 
 func task2() {
@@ -18,8 +19,12 @@ func task2() {
 }
 
 func main() {
-	go task1()
+	result := make(chan string)
+
+	go task1(result)
 	go task2()
+
+	fmt.Println(<-result)
 
 	time.Sleep(time.Second * 3)
 }
